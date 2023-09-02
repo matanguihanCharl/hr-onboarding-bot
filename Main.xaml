@@ -1,17 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="out_Fname" Type="OutArgument(x:String)" />
-    <x:Property Name="out_Lname" Type="OutArgument(x:String)" />
-    <x:Property Name="out_DOB" Type="OutArgument(x:String)" />
-    <x:Property Name="out_Designation" Type="OutArgument(x:String)" />
-    <x:Property Name="out_Gender" Type="OutArgument(x:String)" />
-    <x:Property Name="out_MobileNumber" Type="OutArgument(x:String)" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1171,914</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1171,819" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -44,6 +31,7 @@
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.Platform.GlobalVariables</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,53 +83,12 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This bot will get user information then input it in the hr onboarding website. After submitting the information, the bot will then get the employee ID and email for the user.&#xA;" DisplayName="HR Onboarding Bot" sap:VirtualizedContainerService.HintSize="548,849" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="FirstName" />
-      <Variable x:TypeArguments="x:String" Name="DOB" />
-      <Variable x:TypeArguments="x:String" Name="MobileNumber" />
-      <Variable x:TypeArguments="x:String" Name="LastName" />
-      <Variable x:TypeArguments="x:String" Name="Designation" />
-      <Variable x:TypeArguments="x:String" Name="Gender" />
-      <Variable x:TypeArguments="x:Boolean" Name="SubmitButton" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="This bot will get user information then input it in the hr onboarding website. After submitting the information, the bot will then get the employee ID and email for the user.&#xA;" DisplayName="HR Onboarding Bot" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show New Employee Form" FormId="e1fbe621-ef63-4ae3-ac0c-fd31ded6a19f" sap:VirtualizedContainerService.HintSize="486,186" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True" Title="New Employee Form">
-      <ufa:ShowFormActivity.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="firstName">[FirstName]</InArgument>
-      </ufa:ShowFormActivity.Arguments>
-      <ufa:ShowFormActivity.ShowMargin>
-        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-        </InArgument>
-      </ufa:ShowFormActivity.ShowMargin>
-    </ufa:ShowFormActivity>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,330" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,251" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="e1fbe621-ef63-4ae3-ac0c-fd31ded6a19f" sap:VirtualizedContainerService.HintSize="388,140" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
-            <ufa:GetFormFieldsActivity.Arguments>
-              <OutArgument x:TypeArguments="x:String" x:Key="firstName">[out_Fname]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="dateOfBirth">[out_DOB]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="mobileTelephoneNumber">[out_MobileNumber]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="lastName">[out_Lname]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="designation">[out_Designation]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="gender">[out_Gender]</OutArgument>
-            </ufa:GetFormFieldsActivity.Arguments>
-          </ufa:GetFormFieldsActivity>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="486,85" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[FirstName]" />
   </Sequence>
 </Activity>
