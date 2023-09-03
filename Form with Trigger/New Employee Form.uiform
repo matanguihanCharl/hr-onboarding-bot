@@ -15,7 +15,7 @@
       {
         "tag": "h2",
         "content": "New Employee Details Form",
-        "key": "label",
+        "key": "NewEmployeeFormLabel",
         "input": false,
         "tableView": false,
         "label": "Label",
@@ -30,17 +30,20 @@
                 "tableView": true,
                 "key": "firstName",
                 "type": "textarea",
-                "input": true
+                "input": true,
+                "rows": 1
               },
               {
                 "label": "Date of Birth",
                 "tableView": true,
                 "key": "dateOfBirth",
                 "type": "textarea",
+                "rows": 1,
                 "input": true
               },
               {
                 "label": "Phone Number",
+                "inputMask": "",
                 "tableView": true,
                 "key": "phoneNumber",
                 "type": "phoneNumber",
@@ -61,6 +64,7 @@
                 "tableView": true,
                 "key": "lastName",
                 "type": "textarea",
+                "rows": 1,
                 "input": true
               },
               {
@@ -68,6 +72,7 @@
                 "tableView": true,
                 "key": "designation",
                 "type": "textarea",
+                "rows": 1,
                 "input": true
               },
               {
@@ -108,12 +113,13 @@
       },
       {
         "label": "Submit",
+        "action": "event",
         "showValidations": false,
         "tableView": true,
         "key": "submitButton",
         "type": "button",
-        "saveOnEnter": false,
-        "input": true
+        "input": true,
+        "keyModified": true
       }
     ]
   }
