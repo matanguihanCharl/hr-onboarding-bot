@@ -63,7 +63,7 @@
               },
               {
                 "label": "Phone Number",
-                "inputMask": "",
+                "inputMask": "(+99) 999 999 9999 ",
                 "tableView": true,
                 "validate": {
                   "required": true
