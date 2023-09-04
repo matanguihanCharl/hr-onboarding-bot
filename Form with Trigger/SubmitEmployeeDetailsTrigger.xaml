@@ -115,30 +115,18 @@
         <OutArgument x:TypeArguments="x:String" x:Key="gender">[Gender]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;First Name: &quot; + FirstName + vbCr +&#xD;&#xA;&quot;Last Name: &quot; + LastName + vbCr +&#xD;&#xA;&quot;DOB: &quot; + DOB + vbCr +&#xD;&#xA;&quot;Mobile #: &quot; + MobileNumber + vbCr +&#xD;&#xA;&quot;Designation: &quot; + Designation + vbCr +&#xD;&#xA;&quot;Gender: &quot; + Gender]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;First Name: &quot; + FirstName + vbCr +&#xA;&quot;Last Name: &quot; + LastName + vbCr +&#xA;&quot;DOB: &quot; + DOB + vbCr +&#xA;&quot;Mobile #: &quot; + MobileNumber + vbCr +&#xA;&quot;Designation: &quot; + Designation + vbCr +&#xA;&quot;Gender: &quot; + Gender]" />
     <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,89" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="388,95" sap2010:WorkflowViewState.IdRef="StopTriggers_2" ShouldStop="[StopTriggersOutArgument]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InputEmployeeDetailsToHRSite.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InputEmployeeDetailsToHRSite.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FirstName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="LastName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Bday">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="DOB" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Designation">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Designation" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Gender">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Gender" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MobileNumber">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="MobileNumber" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Bday">[DOB]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Designation">[Designation]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Gender">[Gender]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MobileNumber">[MobileNumber]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="388,95" sap2010:WorkflowViewState.IdRef="StopTriggers_2" ShouldStop="[StopTriggersOutArgument]" />
   </Sequence>
 </Activity>
