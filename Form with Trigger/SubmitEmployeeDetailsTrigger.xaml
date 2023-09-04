@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SubmitEmployeeDetailsTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SubmitEmployeeDetailsTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="StopTriggersOutArgument" Type="OutArgument(x:Boolean)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
@@ -42,6 +42,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -104,8 +105,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submitButton" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,159" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Concurrent" TriggerId="d5105b84-35f7-4c0a-a2bd-4bed10a56f2d" />
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,140" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_3">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" DisplayName="Form Event Trigger" Enabled="True" Event="click.submitButton" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,159" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" MessageId="{x:Null}" SchedulingMode="Concurrent" Tag="{x:Null}" TriggerId="d5105b84-35f7-4c0a-a2bd-4bed10a56f2d" />
+    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,140" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_3" InstanceName="{x:Null}" Result="{x:Null}">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="firstName">[FirstName]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="dateOfBirth">[DOB]</OutArgument>
@@ -116,12 +117,12 @@
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;First Name: &quot; + FirstName + vbCr +&#xA;&quot;Last Name: &quot; + LastName + vbCr +&#xA;&quot;DOB: &quot; + DOB + vbCr +&#xA;&quot;Mobile #: &quot; + MobileNumber + vbCr +&#xA;&quot;Designation: &quot; + Designation + vbCr +&#xA;&quot;Gender: &quot; + Gender]" />
-    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,89" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InputEmployeeDetailsToHRSite.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InputEmployeeDetailsToHRSite.xaml">
+    <ufa:CloseFormActivity DisplayName="Close Form" FormId="ff81cce1-4ecd-4e98-865c-f088e92d2026" sap:VirtualizedContainerService.HintSize="388,89" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" InstanceName="{x:Null}" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InputEmployeeDetailsToHRSite.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="InputEmployeeDetailsToHRSite.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Bday">[DOB]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_Bday">[DOB]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Designation">[Designation]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Gender">[Gender]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_MobileNumber">[MobileNumber]</InArgument>

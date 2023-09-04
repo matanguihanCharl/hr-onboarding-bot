@@ -5,6 +5,7 @@
   },
   "DesignProperties": {
     "Title": "New Employee Form",
+    "Width": 1000,
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
@@ -35,11 +36,27 @@
               },
               {
                 "label": "Date of Birth",
-                "tableView": true,
+                "hideInputLabels": false,
+                "inputsLabelPosition": "top",
+                "tableView": false,
+                "fields": {
+                  "day": {
+                    "hide": false,
+                    "required": true
+                  },
+                  "month": {
+                    "hide": false,
+                    "required": true
+                  },
+                  "year": {
+                    "hide": false,
+                    "required": true
+                  }
+                },
                 "key": "dateOfBirth",
-                "type": "textarea",
-                "rows": 1,
-                "input": true
+                "type": "day",
+                "input": true,
+                "keyModified": true
               },
               {
                 "label": "Phone Number",
