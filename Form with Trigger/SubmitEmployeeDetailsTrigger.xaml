@@ -43,6 +43,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
       <x:String>System.Globalization</x:String>
+      <x:String>System.Text.Encodings.Web</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -89,6 +90,10 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SubmitEmployeeDetailsTrigger" sap:VirtualizedContainerService.HintSize="450,1048" sap2010:WorkflowViewState.IdRef="Sequence_1">

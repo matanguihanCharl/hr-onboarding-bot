@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1171,1738</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1171,1614</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InputEmployeeDetailsToHRSite_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,25 +107,31 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow wil input the employee details on the HR site and get the EMP ID and EMP Email&#xA;" DisplayName="InputEmployeeDetailsToHRSite" sap:VirtualizedContainerService.HintSize="546,1673" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow wil input the employee details on the HR site and get the EMP ID and EMP Email&#xA;" DisplayName="InputEmployeeDetailsToHRSite" sap:VirtualizedContainerService.HintSize="546,1549" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open ExcelCult Browser" sap:VirtualizedContainerService.HintSize="484,1520" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="198b0391-0988-4ad3-97f1-cf62da8db59b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open ExcelCult Browser" sap:VirtualizedContainerService.HintSize="484,1396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="Simulate" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="198b0391-0988-4ad3-97f1-cf62da8db59b" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Input Employee Details Sequence" sap:VirtualizedContainerService.HintSize="450,1303" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Input Employee Details Sequence" sap:VirtualizedContainerService.HintSize="450,1179" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Emp_ID" />
               <Variable x:TypeArguments="x:String" Name="Emp_Email" />
+              <Variable x:TypeArguments="x:String" Name="ProperFname" />
+              <Variable x:TypeArguments="x:String" Name="ProperLname" />
+              <Variable x:TypeArguments="x:String" Name="ProperDesignation" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,7 +139,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'First Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_FirstName]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="None" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'First Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_FirstName]" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="InputBox" DesignTimeRectangle="766, 624, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT fname'" FullSelectorArgument="&lt;webctrl id='fname' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='fname' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="4a2cefa1-f851-452c-b35e-e26cfd4bb6b2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAiCAYAAAAETqbJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVHhe7dOxDYAwAMAw/r+UgYULykQRIlxQW8oJ2QbwYQwIc4z9OKXlu73GgJUZA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDwu8Y0urd5hjAwxjwMcYFPNFryfhDTroAAAAASUVORK5CYII=" InformativeScreenshot="6fe32d74b64a1de90d273783b1de9d86.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -150,7 +156,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Last Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_LastName]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="None" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Last Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_LastName]" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="InputBox" DesignTimeRectangle="1089, 624, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT lname'" FullSelectorArgument="&lt;webctrl id='lname' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lname' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="a0ad246c-cfc4-4c08-ac1f-8890bf1ef63a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAiCAYAAAAETqbJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVHhe7dOxDYAwAMAw/r+UgYULygZFRDxQW8oJ2QbwYQwI9xj7cUpLN3uNAasyBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGhN8xpJWb3WMAD2PAxxgXhvVsOYCXoBwAAAAASUVORK5CYII=" InformativeScreenshot="041c2ddb4109dc7149b2a9d4c7ce19ca.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -167,7 +173,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'DOB*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_Bday.ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="None" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'DOB*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" SecureText="{x:Null}" Text="[in_Bday.ToString]" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="InputBox" DesignTimeRectangle="766, 664, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT dob'" FullSelectorArgument="&lt;webctrl id='dob' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dob' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="30b50224-faa7-4149-a72c-a3ee195d6b43" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAiCAYAAAAETqbJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVHhe7dOxDYAwAMAw/r+UgYULykQRIlxQW8oJ2QbwYQwIc4z9OKXlu73GgJUZA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDwu8Y0urd5hjAwxjwMcYFPNFryfhDTroAAAAASUVORK5CYII=" InformativeScreenshot="69d6271c07656b7c7218ea0a0352576f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -184,7 +190,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Designation*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_Designation]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="None" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Designation*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_Designation]" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="InputBox" DesignTimeRectangle="1089, 664, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT designation'" FullSelectorArgument="&lt;webctrl id='designation' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='designation' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="7467eef5-e1fe-4b84-a59e-638b7efee566" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAiCAYAAAAETqbJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVHhe7dOxDYAwAMAw/r+UgYULygZFRDxQW8oJ2QbwYQwI9xj7cUpLN3uNAasyBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGBGNAMAYEY0AwBgRjQDAGhN8xpJWb3WMAD2PAxxgXhvVsOYCXoBwAAAAASUVORK5CYII=" InformativeScreenshot="b5e6c56510928124d2020edb30846698.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -201,7 +207,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Mobile Number*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Text="[in_MobileNumber]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="None" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Mobile Number*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" SecureText="{x:Null}" Text="[in_MobileNumber]" Timeout="{x:Null}" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="InputBox" DesignTimeRectangle="766, 706, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT mobile'" FullSelectorArgument="&lt;webctrl id='mobile' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mobile' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="9e6c2296-341c-455a-9dde-4487ec17e01a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAiCAYAAAAETqbJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVHhe7dOxDYAwAMAw/r+UgYULykQRIlxQW8oJ2QbwYQwIc4z9OKXlu73GgJUZA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDgjEgGAOCMSAYA4IxIBgDwu8Y0urd5hjAwxjwMcYFPNFryfhDTroAAAAASUVORK5CYII=" InformativeScreenshot="10d69e506c8267581da1ab56c8503261.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -232,7 +238,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheck Action="Check" DisplayName="Check Male" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Version="V3">
+                  <uix:NCheck Action="Check" AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Check Male" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_2" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Timeout="{x:Null}" Version="V3">
                     <uix:NCheck.Target>
                       <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" DesignTimeRectangle="1083, 669, 13, 13" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT male'" FullSelectorArgument="&lt;webctrl id='male' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='male' tag='INPUT' type='radio' class='' aaname='Male' /&gt;" Guid="026cdd48-4819-4ecd-9648-65e945541dcd" InformativeScreenshot="7195917565d69a230811b94e51195c04.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -252,7 +258,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheck Action="Check" DisplayName="Check Male" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Version="V3">
+                  <uix:NCheck Action="Check" AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Check Male" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_3" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Timeout="{x:Null}" Version="V3">
                     <uix:NCheck.Target>
                       <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" DesignTimeRectangle="1138, 669, 13, 13" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT female'" FullSelectorArgument="&lt;webctrl id='female' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='female' tag='INPUT' type='radio' class='' aaname='Female' /&gt;" Guid="ff23ffed-9471-43e0-951c-67b043dd892f" InformativeScreenshot="bc643970ab2d1c50b7464c100fb3726f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -266,7 +272,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Privacy Policy'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Version="V3">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Privacy Policy'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_1" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Timeout="{x:Null}" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" DesignTimeRectangle="637, 804, 13, 13" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' class='' aaname='' /&gt;" Guid="6a9d8c38-4f80-485d-b631-d2b47b5afe96" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABRSURBVDhPY/hPBUBdQ54/f/5/2rRp/8vKyghikDqQehiAGwKSOHbsGJSHH4DUgdTDANwQkA2kAGT1o4ZAwKghmACrIVRJsVTJO5QAKhjy/z8A2VE4SQZFK6QAAAAASUVORK5CYII=" InformativeScreenshot="ca6d1ab7ac37495af36b2410ee1d7b18.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -283,7 +289,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit Button'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Version="V3">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Submit Button'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NClick_2" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" Timeout="{x:Null}" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvElementArea="625, 848, 672, 45" CvTextArea="926, 865, 65, 13" CvTextArgument="SUBMIT" CvType="Button" DesignTimeRectangle="625, 851, 670, 42" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Submit'" FullSelectorArgument="&lt;webctrl aaname='Submit' tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Submit' tag='BUTTON' type='submit' class='' check:innerText='SUBMIT' /&gt;" Guid="e9624921-8406-4f59-92b3-323bd577516f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAqIAAAAuCAYAAADz7Ht5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARZSURBVHhe7dw/axRpHAfwe202voe8CsHK6iorQUiVars0xsKrUkhEIhxsITnR03BEwyV6MTkYXN2oiZvkd/vM7jM7G0dPzN7IHp8vfEgy85s/1fLl2Zn8FCIiIiIiPyCKqIiIiIj8kHxWRDf31+LWxpVYXL8cN+9fAgCA75Y6ZeqWqWOez1QRXX++1HgCAAC4qNQ166mKaGqpTQcAAMCs1FdGqyKalkybhgEAYFZS58ypiqhnQgEA+K+lzplTFdGmQQAAmLUcRRQAgFblKKIAALQqRxEFAKBVOYooAACtylFEAQBoVY4iCgBAq3IUUQAAWpWjiAIA0KocRRQAgFblKKIAALQqRxEF5l7nj7U4ODoef5pFDAZFHOwvRqeaWYrdQdrTj92t6WNvvt4pj4n3q1Pbn7wfbZ7K8Lx7f12vnTdZjaLc2XDubGsjjsqZnXgytS8fW9+e7/VL+cp1AOZEjiIKzLfuShycDj/ETnZi+1Unfn3VjWJY5AZvl2dQRPuxt3s9Vp8tRndvI3rpOnEce9u146syOczHB3Gndo6Rq7H5Ybz/m4roQtz+PV0zWYm98X2P7iP5OW536+cAmD85iigw3/ZGRfLozVLz/tL3F9H6fGf/dTk6fa1aER2W1IOXC7V9w2P+fBqTBc5vKaJ1X7lvgDmWo4gC821cROO0iN1XN76wWjibIppnG4voh6exdzL8OdiI9WrfjdhOTwycbsVBuSqqiAIkOYooMN+6w7L2afxBlnJ2HIfv1uLew/rcxYvo8uPl0XXOitjanMxVZXJ4/O3xuXoHV8t91d9/XxufTxEFSHIUUWD+PbwRj4qdOCxL2zjH3bhbzXxvET2ffhQHS7Fcm6sX0eo6J0+jmwpy+n28QqqIAkzkKKLA/8ry5loU5UtFRWw/y9sXxi8MfaWI9lemtucV0clLQp148q5fjg6Gs5MXoepF9FJ0Xm6Vz4QeHo0qZvF6tDqqiAJM5CiiwHzrXo07v9VfEMqlc7rc3S1GlS99TV6f7b4d/dun/HV6lovoVAHsrkUvbZ56DnS6iN68fy22PqYNw9RWZRVRgIkcRRSYa+tv0irlcfR6D+LRi075FX36n53Tq5ZDj4alr1wp7UdRrEb3xXJs9orRG+2f6sVy5PyK6L2d1dg+/PcV0dJWNw5Pith9PinIiijARI4iCsyxhVjeXInt9/0YnI0/zM76cdj7JVab3p5/3DCbXmxqmB0Vx3M5TSV25dy5G4poA0UUYCJHEQUAoFU5iigAAK3KUUQBAGhVjiIKAECrchRRAABalaOIAgDQqhxFFACAVuUoogAAtCpHEQUAoFU5iigAAK3KUUQBAGhVTlVEF9cvNw4CAMCspM6ZUxXRWxtXGocBAGBWUufMqYro5v5a4zAAAMxK6pw5VRFNWX++1HgAAABcVOqa9UwV0ZTUUtOSqWdGAQC4qNQpU7esr4TmfFZERURERETaiCIqIiIiIj8gEf8A5TsUkuDYnVkAAAAASUVORK5CYII=" InformativeScreenshot="87b3302939a5583180b21aa57c8622f6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
@@ -294,7 +300,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NGetText DisplayName="Get Text 'Employee Id*'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" TextString="[Emp_ID]" Version="V3">
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text 'Employee Id*'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NGetText_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" ScrapingOptions="{x:Null}" TextString="[Emp_ID]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvElementArea="764, 537, 197, 33" CvTextArea="769, 544, 179, 17" CvTextArgument="Employee Id will appear here" CvType="InputBox" DesignTimeRectangle="766, 538, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT EmployeeId'" FullSelectorArgument="&lt;webctrl id='EmployeeId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='EmployeeId' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="8d2274d9-58d8-4506-815b-3cd9e731aeee" InformativeScreenshot="32a2c6f15d95feab6764cafa9daea037.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -311,7 +317,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'Official Mail Id*'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" TextString="[Emp_Email]" Version="V3">
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text 'Official Mail Id*'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NGetText_2" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="198b0391-0988-4ad3-97f1-cf62da8db59b" ScrapingOptions="{x:Null}" TextString="[Emp_Email]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://excelcult.com/hr-on-boarding-process-form/" CvType="AnyWordGroup" DesignTimeRectangle="1089, 538, 194, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT EmployeeEmail'" FullSelectorArgument="&lt;webctrl id='EmployeeEmail' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='EmployeeEmail' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="be260c90-8288-4e96-9082-0fb39673d941" InformativeScreenshot="431684dcb2116ca70ee1cd972bfc05a0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HR On-Boarding Process Form - ExcelCult' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -328,11 +334,18 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NGetText>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box Emp ID and Emp Email" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Successfully registered: &quot; + in_FirstName + &quot; &quot; + in_LastName + vbCr +&#xA;&quot;Employee ID: &quot; + Emp_ID + vbCr +&#xA;&quot;Employee Email: &quot; + Emp_Email]" />
-            <ui:LogMessage DisplayName="Log Message Emp ID and Emp Email" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully registered: &quot; + in_FirstName + &quot; &quot; + in_LastName + vbCr +&#xA;&quot;Employee ID: &quot; + Emp_ID + vbCr +&#xA;&quot;Employee Email: &quot; + Emp_Email]">
+            <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="{x:Null}" Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box Emp ID and Emp Email" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Successfully registered: &quot; + in_FirstName + &quot; &quot; + in_LastName + vbCr +&#xA;&quot;Employee ID: &quot; + Emp_ID + vbCr +&#xA;&quot;Employee Email: &quot; + Emp_Email]" TopMost="{x:Null}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MessageBox>
+            <ui:LogMessage DisplayName="Log Message Emp ID and Emp Email" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully registered: &quot; + in_FirstName + &quot; &quot; + in_LastName + vbCr +&#xA;&quot;Employee ID: &quot; + Emp_ID + vbCr +&#xA;&quot;Employee Email: &quot; + Emp_Email]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>

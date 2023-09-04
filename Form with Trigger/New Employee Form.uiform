@@ -29,10 +29,13 @@
               {
                 "label": "First Name",
                 "tableView": true,
+                "validate": {
+                  "required": true
+                },
                 "key": "firstName",
                 "type": "textarea",
-                "input": true,
-                "rows": 1
+                "rows": 1,
+                "input": true
               },
               {
                 "label": "Date of Birth",
@@ -62,6 +65,9 @@
                 "label": "Phone Number",
                 "inputMask": "",
                 "tableView": true,
+                "validate": {
+                  "required": true
+                },
                 "key": "phoneNumber",
                 "type": "phoneNumber",
                 "input": true
@@ -79,6 +85,9 @@
               {
                 "label": "Last Name",
                 "tableView": true,
+                "validate": {
+                  "required": true
+                },
                 "key": "lastName",
                 "type": "textarea",
                 "rows": 1,
@@ -87,6 +96,9 @@
               {
                 "label": "Designation",
                 "tableView": true,
+                "validate": {
+                  "required": true
+                },
                 "key": "designation",
                 "type": "textarea",
                 "rows": 1,
@@ -109,6 +121,9 @@
                     "shortcut": "F"
                   }
                 ],
+                "validate": {
+                  "required": true
+                },
                 "key": "gender",
                 "type": "radio",
                 "input": true
